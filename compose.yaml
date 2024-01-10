@@ -17,6 +17,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=myuser
       - SPRING_DATASOURCE_PASSWORD=secret
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - EUREKA_CLIENT_SERVICE_URL=http://eureka-server:8761/eureka
     image: 'song-service'
     ports:
       - 8081:8081
@@ -41,8 +42,17 @@ services:
       - SPRING_DATASOURCE_USERNAME=myuser
       - SPRING_DATASOURCE_PASSWORD=secret
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - EUREKA_CLIENT_SERVICE_URL=http://eureka-server:8761/eureka
     image: 'resource-service'
     ports:
       - 8082:8082
     depends_on:
       - postgres-resource-service
+
+  eureka-server:
+    build:
+      context: EurekaServerApp
+      dockerfile: Dockerfile
+    image: 'eureka-server'
+    ports:
+      - 8761:8761

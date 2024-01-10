@@ -1,5 +1,7 @@
 package com.vitaliyyats.resourceservice.Service;
 
+import com.netflix.appinfo.InstanceInfo;
+import com.netflix.discovery.EurekaClient;
 import com.vitaliyyats.resourceservice.dto.CreationResponse;
 import com.vitaliyyats.resourceservice.dto.SongDTO;
 import com.vitaliyyats.resourceservice.model.Resource;
@@ -7,7 +9,6 @@ import com.vitaliyyats.resourceservice.repository.ResourceRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tika.exception.TikaException;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 import org.xml.sax.SAXException;
@@ -25,9 +26,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 public class ResourceService {
     private final Mp3MetadataExtractorService mp3MetadataExtractorService;
     private final ResourceRepository resourceRepository;
-
-    @Value("${song-service.uri}")
-    private String songServiceUri;
+    private final EurekaClient eurekaClient;
 
     public Resource getResource(Long id) {
         var resource = resourceRepository.findById(id);
@@ -52,11 +51,16 @@ public class ResourceService {
     private void sendMetadataToSongService(SongDTO song) {
         RestClient restClient = RestClient.create();
         restClient.post()
-                .uri(songServiceUri)
+                .uri(songServiceUrl() + "/songs")
                 .contentType(APPLICATION_JSON)
                 .body(song)
                 .retrieve()
                 .toBodilessEntity();
+    }
+
+    private String songServiceUrl() {
+        InstanceInfo instance = eurekaClient.getNextServerFromEureka("song-service", false);
+        return instance.getHomePageUrl();
     }
 
     public List<Long> deleteResources(String ids) {
