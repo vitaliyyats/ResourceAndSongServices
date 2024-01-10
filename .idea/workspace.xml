@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d231525f-694c-49f3-ae65-a67b42980210" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EurekaServerApp/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EurekaServerApp/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EurekaServerApp/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EurekaServerApp/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EurekaServerApp/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EurekaServerApp/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EurekaServerApp/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EurekaServerApp/src/main/java/com/vitaliyyats/eurekaserverapp/EurekaServerAppApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EurekaServerApp/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EurekaServerApp/src/test/java/com/vitaliyyats/eurekaserverapp/EurekaServerAppApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResourceAndSongServices.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ResourceAndSongServices.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SongService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SongService/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="d231525f-694c-49f3-ae65-a67b42980210" name="Changes" comment="added Eureka Server module, added Eureka service registration and discovery to Song and Resource services">
+      <change beforePath="$PROJECT_DIR$/EurekaServerApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServerApp/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/EurekaServerApp" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="KubernetesApiProvider"><![CDATA[{
   "isMigrated": true
@@ -63,7 +46,8 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -77,7 +61,7 @@
       <recent name="C:\Users\Vitalii_Yatsunskyi\IdeaProjects\ResourceAndSongServices" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.EurekaServerAppApplication">
+  <component name="RunManager" selected="Docker.compose.yaml: Compose Deployment">
     <configuration name="EurekaServerAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="EurekaServerApp" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.vitaliyyats.eurekaserverapp.EurekaServerAppApplication" />
@@ -134,7 +118,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704375427265</updated>
-      <workItem from="1704375428259" duration="6583000" />
+      <workItem from="1704375428259" duration="11116000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -152,14 +136,45 @@
       <option name="project" value="LOCAL" />
       <updated>1704376281338</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added Eureka Server module, added Eureka service registration and discovery to Song and Resource services">
+      <option name="closed" value="true" />
+      <created>1704891067727</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704891067727</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added Eureka Server module, added Eureka service registration and discovery to Song and Resource services">
+      <option name="closed" value="true" />
+      <created>1704891577802</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704891577802</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/EurekaServerApp" />
+    </ignored-roots>
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="added Eureka Server module, added Eureka service registration and discovery to Song and Resource services" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Eureka Server module, added Eureka service registration and discovery to Song and Resource services" />
   </component>
 </project>
